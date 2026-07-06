@@ -1,0 +1,39 @@
+name: Prompt Eval
+
+on:
+  pull_request:
+    paths:
+      - 'output/perplexity_god_mode_v4.py'
+      - 'output/prompt_eval_runner.py'
+      - 'output/prompt_golden_dataset.json'
+      - '.github/workflows/prompt-eval.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'output/perplexity_god_mode_v4.py'
+      - 'output/prompt_eval_runner.py'
+      - 'output/prompt_golden_dataset.json'
+      - '.github/workflows/prompt-eval.yml'
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run smoke eval
+        run: python output/prompt_eval_runner.py --smoke-only --min-pass-rate 1.0 --min-pack-match-rate 1.0
+
+      - name: Upload eval artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompt-eval-results
+          path: |
+            output/eval_results/eval_results.json
+            output/eval_results/eval_results.csv
