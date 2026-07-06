@@ -1,0 +1,82 @@
+[
+  {
+    "id": "debug_ocr_001",
+    "task_type": "debug",
+    "domain": "OCR and backend systems",
+    "goal": "Create a prompt to debug a flaky OCR pipeline for trading card ingestion with reproducible local steps.",
+    "constraints": [
+      "Require root-cause isolation.",
+      "Prefer local verification.",
+      "Include failure handling."
+    ],
+    "expected_pack": "coding",
+    "required_signals": [
+      "validation",
+      "risks",
+      "implementation"
+    ]
+  },
+  {
+    "id": "docs_api_001",
+    "task_type": "writing",
+    "domain": "technical documentation",
+    "goal": "Create a prompt to document a card catalog API so new contributors can onboard quickly.",
+    "constraints": [
+      "Use concise sections.",
+      "Prefer structure over marketing tone."
+    ],
+    "expected_pack": "documentation",
+    "required_signals": [
+      "validation",
+      "risks",
+      "setup"
+    ]
+  },
+  {
+    "id": "research_llm_001",
+    "task_type": "research",
+    "domain": "product research",
+    "goal": "Create a prompt that evaluates practical adoption risks and benefits of LLM features in a small software product.",
+    "constraints": [
+      "Separate evidence from assumptions.",
+      "Highlight implementation risk."
+    ],
+    "expected_pack": "research",
+    "required_signals": [
+      "evidence",
+      "gaps",
+      "implications"
+    ]
+  },
+  {
+    "id": "strategy_roadmap_001",
+    "task_type": "strategy",
+    "domain": "product planning",
+    "goal": "Create a prompt that prioritizes roadmap options for a small app team under time and budget constraints.",
+    "constraints": [
+      "State tradeoffs explicitly.",
+      "Provide a prioritized sequence."
+    ],
+    "expected_pack": "product",
+    "required_signals": [
+      "priorities",
+      "execution",
+      "tradeoffs"
+    ]
+  },
+  {
+    "id": "creative_brand_001",
+    "task_type": "creative",
+    "domain": "brand naming",
+    "goal": "Create a prompt for generating distinctive product names for a trading card app.",
+    "constraints": [
+      "Generate distinct directions.",
+      "Avoid generic filler."
+    ],
+    "expected_pack": "general",
+    "required_signals": [
+      "concept",
+      "alternatives"
+    ]
+  }
+]
